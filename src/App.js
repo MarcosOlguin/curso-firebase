@@ -45,11 +45,13 @@ function App() {
             <h3>Public Profile</h3>
             <p>Your link to share is the following:</p>
             <div className="link-container">
-              <a href={`http://localhost:3000/u/${currentUser.username}`}>
+              <a
+                href={`https://crealinks.vercel.app/u/${currentUser.username}`}
+              >
                 http://localhost:3000/u/{currentUser.username}
               </a>
               <CopyToClipboard
-                text={`http://localhost:3000/u/${currentUser.username}`}
+                text={`https://crealinks.vercel.app/u/${currentUser.username}`}
               >
                 <button
                   className={copied ? "copied" : "no-copied"}
