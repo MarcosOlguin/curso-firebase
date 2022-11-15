@@ -11,6 +11,7 @@ import SignOutView from "./routes/SignOutView";
 import PublicProfileView from "./routes/PublicProfileView";
 import ChooseUsernameView from "./routes/ChooseUsernameView";
 import EditProfileView from "./routes/EditProfileView";
+import DashboardWrapper from "./components/DashboadWrapper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,15 +23,17 @@ root.render(
       rel="stylesheet"
     ></link>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/login" element={<LoginView />} />
-        <Route path="/dashboard" element={<DashboardView />} />
-        <Route path="/dashboard/profile" element={<EditProfileView />} />
-        <Route path="/signout" element={<SignOutView />} />
-        <Route path="u/:username" element={<PublicProfileView />} />
-        <Route path="choose-username" element={<ChooseUsernameView />} />
-      </Routes>
+      <DashboardWrapper>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<LoginView />} />
+          <Route path="/dashboard" element={<DashboardView />} />
+          <Route path="/dashboard/profile" element={<EditProfileView />} />
+          <Route path="/signout" element={<SignOutView />} />
+          <Route path="u/:username" element={<PublicProfileView />} />
+          <Route path="choose-username" element={<ChooseUsernameView />} />
+        </Routes>
+      </DashboardWrapper>
     </BrowserRouter>
   </React.StrictMode>
 );

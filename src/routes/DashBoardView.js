@@ -93,46 +93,44 @@ function DashboardView() {
   };
 
   return (
-    <DashboardWrapper>
-      <div className={style.container}>
-        <h1>DashBoard</h1>
-        <form
-          className={style.entryContainer}
-          action=""
-          onSubmit={handleOnSubmit}
-        >
-          <label htmlFor="title">Title</label>
-          <input
-            className="input"
-            type="text"
-            name="title"
-            onChange={handleOnChange}
-          ></input>
+    <div className={style.container}>
+      <h1>DashBoard</h1>
+      <form
+        className={style.entryContainer}
+        action=""
+        onSubmit={handleOnSubmit}
+      >
+        <label htmlFor="title">Title</label>
+        <input
+          className="input"
+          type="text"
+          name="title"
+          onChange={handleOnChange}
+        ></input>
 
-          <label htmlFor="url">Url</label>
-          <input
-            className="input"
-            type="text"
-            onChange={handleOnChange}
-            name="url"
-          ></input>
+        <label htmlFor="url">Url</label>
+        <input
+          className="input"
+          type="text"
+          onChange={handleOnChange}
+          name="url"
+        ></input>
 
-          <input className="btn" type="submit" value="Crear nuevo link"></input>
-        </form>
-        <div className={styleLinks.linksContainer}>
-          {links.map((e, i) => (
-            <LinkComp
-              key={i}
-              docId={e.docId}
-              url={e.url}
-              title={e.title}
-              onDelete={handleDeleteLink}
-              onUpdate={handleUpdateLink}
-            />
-          ))}
-        </div>
+        <input className="btn" type="submit" value="Crear nuevo link"></input>
+      </form>
+      <div className={styleLinks.linksContainer}>
+        {links.map((e, i) => (
+          <LinkComp
+            key={i}
+            docId={e.docId}
+            url={e.url}
+            title={e.title}
+            onDelete={handleDeleteLink}
+            onUpdate={handleUpdateLink}
+          />
+        ))}
       </div>
-    </DashboardWrapper>
+    </div>
   );
 }
 

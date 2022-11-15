@@ -88,61 +88,66 @@ function EditProfileView() {
       onUserNotLoggedIn={handleUserNotLoggedIn}
       onUserNotRegistered={handleUserNotRegistered}
     >
-      <DashboardWrapper>
-        <div className="container">
-          <h2>Edit Profile Info</h2>
-          <div className={style.profilePictureContainer}>
-            {!edit ? (
-              <>
-                <div>
-                  <span className={style.span}>{currentUser.username}</span>
-
-                  <button className={style.btnEdit}>
-                    <span
-                      className="material-icons"
-                      onClick={() => {
-                        setEdit(true);
-                      }}
-                    >
-                      edit
-                    </span>
-                  </button>
-                </div>
-              </>
-            ) : (
+      <div className="container">
+        <h2>Edit Profile Info</h2>
+        <div className={style.profilePictureContainer}>
+          {!edit ? (
+            <>
               <div>
-                <input
-                  className={style.input}
-                  value={currentUser.username}
-                  ref={userRef}
-                  onChange={handleUsernameChange}
-                  onBlur={handleBlur}
-                />
-                <button className={style.btnConfirm}>Confirm</button>
-              </div>
-            )}
+                <span className={style.span}>{currentUser.username}</span>
 
+                <button className={style.btnEdit}>
+                  <span
+                    className="material-icons"
+                    onClick={() => {
+                      setEdit(true);
+                    }}
+                  >
+                    edit
+                  </span>
+                </button>
+              </div>
+            </>
+          ) : (
             <div>
-              {profileUrl ? (
-                <img src={profileUrl} alt="profile-img" width={100} />
-              ) : (
-                <img src={img} />
-              )}
-            </div>
-            <div>
-              <button className="btn" onClick={handleOpenFilePicker}>
-                Choose new profile picture
-              </button>
               <input
-                className={style.fileInput}
-                ref={fileRef}
-                type="file"
-                onChange={handleChangeFile}
+                className={style.input}
+                value={currentUser.username}
+                ref={userRef}
+                onChange={handleUsernameChange}
+                onBlur={handleBlur}
               />
+              <button className={style.btnConfirm}>Confirm</button>
             </div>
+          )}
+
+          <div>
+            {profileUrl ? (
+              <img src={profileUrl} alt="profile-img" width={100} />
+            ) : (
+              <img src={img} />
+            )}
           </div>
+          <div>
+            <button className="btn" onClick={handleOpenFilePicker}>
+              Choose new profile picture
+            </button>
+            <input
+              className={style.fileInput}
+              ref={fileRef}
+              type="file"
+              onChange={handleChangeFile}
+            />
+          </div>
+          <button
+            onClick={() => {
+              navigate("/signout");
+            }}
+          >
+            Signout
+          </button>
         </div>
-      </DashboardWrapper>
+      </div>
     </AuthProvider>
   );
 }

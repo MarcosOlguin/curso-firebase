@@ -9,6 +9,7 @@ import {
 } from "../firebase/firebase";
 import style from "./publicProfileView.module.css";
 import img from "../imgs/link-icon.png";
+import img2 from "../imgs/sinPerfil.jpg";
 
 function PublicProfileView() {
   const [profile, setProfile] = useState();
@@ -50,6 +51,7 @@ function PublicProfileView() {
     );
   }
 
+  console.log(url);
   return (
     <>
       <nav className={style.navbar}>
@@ -60,7 +62,7 @@ function PublicProfileView() {
       </nav>
       <div className={style.profileContainer}>
         <div className={style.profilePicture}>
-          <img src={url} />
+          <img src={url ? url : img2} />
         </div>
         <h2>{profile?.profileInfo.username}</h2>
         <h3>{profile?.profileInfo.displayName}</h3>
