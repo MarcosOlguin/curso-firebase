@@ -48,7 +48,7 @@ function App() {
               <a
                 href={`https://crealinks.vercel.app/u/${currentUser.username}`}
               >
-                http://localhost:3000/u/{currentUser.username}
+                https://crealinks.vercel.app/u/{currentUser.username}
               </a>
               <CopyToClipboard
                 text={`https://crealinks.vercel.app/u/${currentUser.username}`}
