@@ -1,0 +1,61 @@
+.profilePictureContainer {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profilePictureContainer img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.fileInput {
+  display: none;
+}
+
+.span {
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+.input {
+  padding: 1rem;
+  border: 1px solid grey;
+}
+
+.btnConfirm {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(184, 184, 184);
+  background-color: rgb(79, 79, 214);
+  color: white;
+}
+
+.btnEdit {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  height: 16px;
+  color: rgb(170, 170, 170);
+  cursor: pointer;
+}
+
+.btnEdit:hover {
+  color: rgb(47, 47, 47);
+}
+
+@media only screen and (max-width: 900px) {
+  .profilePictureContainer {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}

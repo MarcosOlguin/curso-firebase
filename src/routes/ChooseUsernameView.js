@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { existsUsername, updateUser } from "../firebase/firebase";
 import { upload } from "@testing-library/user-event/dist/upload";
+import style from "./chooseUsername.module.css";
 
 function ChooseUsernameView() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function ChooseUsernameView() {
 
   if (state === 3 || state === 5) {
     return (
-      <div>
+      <div className={style.chooseUsernameContainer}>
         <h1>Bienvenido {currentUser.displayName}</h1>
         <p>Para terminar el proceso elige un nombre de usuario</p>
         {state === 5 ? <p>El nombre de usuario ya existe escoge otro</p> : ""}
@@ -50,16 +51,20 @@ function ChooseUsernameView() {
           <input type="text" onChange={handleInputUsername} />
         </div>
         <div>
-          <button onClick={handleContinue}>Continuar</button>
+          <button className="btn" onClick={handleContinue}>
+            Continuar
+          </button>
         </div>
       </div>
     );
   }
   if (state === 6) {
     return (
-      <div>
+      <div className={style.chooseUsernameContainer}>
         <h1>Felicidades! ya puedes ir al dashboard</h1>
-        <Link to="/dashboard">Continuar</Link>
+        <Link to="/dashboard" className="btn">
+          Continuar
+        </Link>
       </div>
     );
   }

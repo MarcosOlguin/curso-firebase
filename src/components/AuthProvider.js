@@ -22,6 +22,7 @@ function AuthProvider({
   onUserNotRegistered,
 }) {
   const navigate = useNavigate();
+
   useEffect(() => {
     onAuthStateChanged(auth, handleUserStateChange);
   }, []);
@@ -33,7 +34,7 @@ function AuthProvider({
         //TO DO: redirigir dashboard
         const userInfo = await getUserInfo(user.uid);
         if (userInfo.processCompleted) {
-          onUserLoggedIn(user);
+          onUserLoggedIn(userInfo);
         } else {
           onUserNotRegistered(userInfo);
         }

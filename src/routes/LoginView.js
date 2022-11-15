@@ -10,6 +10,7 @@ import { auth, userExists } from "../firebase/firebase.js";
 
 import { Link, useNavigate } from "react-router-dom";
 import AuthProvider from "../components/AuthProvider.js";
+import style from "./loginView.module.css";
 
 function LoginView() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ function LoginView() {
   4: no hay nadie logueado
   5: ya existe username
   6:nuevo username click para continuar
+  7:username no existe
 
   */
   const [state, setState] = useState(0);
@@ -52,9 +54,6 @@ function LoginView() {
   // };
 
   const handleClick = async () => {
-    const googleProvider = new GoogleAuthProvider();
-    await signInWithGoogle(googleProvider);
-
     const signInWithGoogle = async (googleProvider) => {
       try {
         const res = await signInWithPopup(auth, googleProvider);
@@ -63,6 +62,9 @@ function LoginView() {
         console.error(error);
       }
     };
+
+    const googleProvider = new GoogleAuthProvider();
+    await signInWithGoogle(googleProvider);
   };
 
   const handleUserLoggedIn = (user) => {
@@ -77,9 +79,13 @@ function LoginView() {
 
   if (state === 4) {
     return (
-      <div>
-        Login
-        <button onClick={handleClick}>Login with Google</button>
+      <div className={style.loginView}>
+        <div>
+          <h1>Link Tree</h1>
+        </div>
+        <button className={style.provider} onClick={handleClick}>
+          Login with Google
+        </button>
       </div>
     );
   }

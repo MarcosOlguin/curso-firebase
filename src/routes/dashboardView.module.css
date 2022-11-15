@@ -1,0 +1,33 @@
+.entryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    align-self: flex-start;
+  }
+  .container {
+    width: 90%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .entryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}

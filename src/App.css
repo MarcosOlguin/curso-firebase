@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+.link-container {
+  display: flex;
+  align-items: center;
+
+  background-color: rgb(16, 88, 244);
+  width: 450px;
+
+  font-size: 20px;
+  padding-right: 0;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.no-copied {
+  text-decoration: none;
+  border: none;
+  padding: 25px 0;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  width: 100%;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.copied {
+  text-decoration: none;
+  border: none;
+  padding: 25px 0;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  width: 100%;
+  font-size: 18px;
+  background-color: rgb(31, 199, 31);
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.copied:hover {
+  background-color: rgb(33, 206, 33);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.no-copied:hover {
+  cursor: pointer;
+  background-color: rgb(202, 202, 202);
+  transition: 0.3s;
+}
+
+.link-container a {
+  padding: 20px 40px;
+  color: white;
+  padding-right: 20px;
+}
+
+.link-container a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .container h2 {
+    text-decoration: underline;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container h3 {
+    font-size: 25px;
+  }
+  .container p {
+    font-size: 18px;
+  }
+  .link-container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(16, 88, 244);
+
+    width: 105%;
+    font-size: 20px;
+    padding-right: 0;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 10px;
+    font-size: 16px;
+    height: 9vh;
+  }
+  .link-container a {
+    padding: 10px 20px;
+    padding-left: 5px;
+    color: black;
+    padding-right: 10px;
+    color: white;
+  }
+  .no-copied {
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8.2px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  .copied {
+    text-decoration: none;
+    border: none;
+    padding: 0 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    width: 100%;
+    font-size: 16px;
+    background-color: rgb(31, 199, 31);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  .copied:hover {
+    background-color: rgb(33, 206, 33);
+  }
+
+  .no-copied:hover {
+    cursor: pointer;
+    background-color: rgb(202, 202, 202);
+    transition: 0.3s;
   }
 }
